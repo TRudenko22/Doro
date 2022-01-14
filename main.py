@@ -4,11 +4,9 @@ import simpleaudio as sa
 
 you_suffer = sa.WaveObject.from_wave_file("Napalm Death - You Suffer.wav")
 
-minutes = int(input("\nEnter Working Minutes: "))
-rminutes = int(input("Enter Resting Minutes: "))
+minutes = int(input("\nEnter Working Minutes: "))*60
+rminutes = int(input("Enter Resting Minutes: "))*60
 
-minutes *= 60 
-rminutes *= 60 
 
 print("\n")
 while minutes:
