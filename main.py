@@ -1,10 +1,13 @@
+#!/bin/python3
+
+
 from rich import print as rprint
 from ascii import * 
 from os import system
 import time
 import simpleaudio as sa
 
-you_suffer = sa.WaveObject.from_wave_file('Napalm Death - You Suffer.wav')
+you_suffer = sa.WaveObject.from_wave_file("Napalm Death - You Suffer.wav")
 
 system('clear')
 rprint(main_title)
