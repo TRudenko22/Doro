@@ -1,6 +1,3 @@
-#!/bin/python3
-
-
 from rich import print as rprint
 from ascii import * 
 from os import system
