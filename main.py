@@ -11,6 +11,7 @@ you_suffer = sa.WaveObject.from_wave_file("Napalm Death - You Suffer.wav")
 
 system('clear')
 rprint(main_title)
+
 minutes = int(input('\nEnter Working Minutes: '))
 rminutes = int(input('Enter Resting Minutes: '))
 rounds = int(input('Enter Rounds: '))
