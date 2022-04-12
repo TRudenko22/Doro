@@ -1,3 +1,18 @@
+#! /usr/bin/python3
+
+from rich import print as rprint
+from os import system
+import time
+import simpleaudio as sa
+import typer
+
+
+
+app = typer.Typer()
+you_suffer = sa.WaveObject.from_wave_file("/home/tim/.music/Napalm Death - You Suffer.wav")
+
+
+
 working = """
 [red]
 ██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗██╗███╗   ██╗ ██████╗ 
@@ -25,4 +40,42 @@ main_title = """
 ██████╔╝╚██████╔╝██║  ██║╚██████╔╝
 ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝Tim Rudenko 
 [/red]"""
-                                  
+ 
+
+
+@app.command()
+def run(minutes, rminutes, rounds):
+    
+    rprint(main_title)
+    for loop in range(int(rounds)):
+        
+        lMinutes1 = int(minutes) * 60
+        lMinutes2 = int(rminutes) * 60
+
+        rprint(f'\n{working}\n')
+        while lMinutes1: 
+            mins, secs = divmod(lMinutes1, 60)
+            timer = f"\t\t[cyan][b]     Working: {'{:02d}:{:02d}'.format(mins, secs)}[/b][/cyan]"
+            rprint(timer, end='\r')
+            time.sleep(1)
+            lMinutes1 -= 1
+
+        you_suffer.play()
+        system('clear')
+        
+        rprint(f'\n{resting}\n')
+        while lMinutes2:
+            mins, secs = divmod(lMinutes2, 60)
+            timer = f"\t\t[cyan][b]     Resting: {'{:02d}:{:02d}'.format(mins, secs)}[/b][/cyan]"
+            rprint(timer, end='\r')
+            time.sleep(1)
+            lMinutes2 -= 1
+        
+        print('\n')    
+        you_suffer.play()
+        system('clear')
+
+
+
+if __name__ == '__main__':
+    app()
