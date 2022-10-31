@@ -9,7 +9,7 @@ import typer
 
 
 app = typer.Typer()
-you_suffer = sa.WaveObject.from_wave_file("/home/tim/.music/Napalm Death - You Suffer.wav")
+audio = sa.WaveObject.from_wave_file("Path to your audio file")
 
 
 
@@ -60,7 +60,7 @@ def run(minutes, rminutes, rounds):
             time.sleep(1)
             lMinutes1 -= 1
 
-        you_suffer.play()
+        audio.play()
         system('clear')
         
         rprint(f'\n{resting}\n')
@@ -72,7 +72,7 @@ def run(minutes, rminutes, rounds):
             lMinutes2 -= 1
         
         print('\n')    
-        you_suffer.play()
+        audio.play()
         system('clear')
 
 
